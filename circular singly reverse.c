@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<stdlib.h>
+void reverse();
+struct node
+{
+    int data;
+    struct node*next;
+}*head,*tail,*temp,*newnode;
+
+int main()
+{
+    int n,i;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        newnode=(struct node *)malloc(sizeof(struct node));
+        scanf("%d",&newnode->data);
+        newnode->next=NULL;
+        if(head==NULL)
+        {
+            head=newnode;
+            tail=newnode;
+        }
+        else
+        {
+            tail->next=newnode;
+            tail=newnode;
+            tail->next=head;
+        }
+    }
+    reverse();
+}
+void reverse()
+{
+    temp=head;
+
+}
